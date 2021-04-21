@@ -364,6 +364,16 @@ static const struct adc_driver_api mcp320x_adc_api = {
 			 &mcp320x_adc_api)
 
 /*
+ * MCP3201: 1 channels
+ */
+#define MCP3201_DEVICE(n) MCP320X_DEVICE(3201, n, 1)
+
+/*
+ * MCP3202: 2 channels
+ */
+#define MCP3202_DEVICE(n) MCP320X_DEVICE(3202, n, 2)
+
+/*
  * MCP3204: 4 channels
  */
 #define MCP3204_DEVICE(n) MCP320X_DEVICE(3204, n, 4)
@@ -379,5 +389,7 @@ static const struct adc_driver_api mcp320x_adc_api = {
 	UTIL_LISTIFY(DT_NUM_INST_STATUS_OKAY(microchip_mcp##t),	\
 		     CALL_WITH_ARG, inst_expr)
 
+INST_DT_MCP320X_FOREACH(3201, MCP3201_DEVICE);
+INST_DT_MCP320X_FOREACH(3202, MCP3202_DEVICE);
 INST_DT_MCP320X_FOREACH(3204, MCP3204_DEVICE);
 INST_DT_MCP320X_FOREACH(3208, MCP3208_DEVICE);
