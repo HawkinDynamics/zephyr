@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 config ADC_MCP320X
-	bool "MCP3204/MCP3208 driver"
+	bool "MCP32041/2/4/8 driver"
 	depends on SPI
 	help
-	  Enable MCP3204/MCP3208 ADC driver.
+	  Enable MCP320x ADC driver.
 
-	  The MCP3204/MCP3208 are 4/8 channel 12-bit A/D converters
+	  The MCP3204/MCP3208 are 1-8 channel 12-bit A/D converters
 	  with SPI interface.
 
 if ADC_MCP320X
